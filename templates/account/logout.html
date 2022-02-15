@@ -1,0 +1,22 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Desconectar" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>{% trans "Cerrar sesión" %}</h1>
+
+<p>{% trans '¿Estás seguro(a) de que quieres cerrar sesión?' %}</p>
+
+<form method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit" class="btn btn-outline-primary"  >{% trans 'Cerrar Sesión' %}</button>
+</form>
+</div>
+
+{% endblock %}

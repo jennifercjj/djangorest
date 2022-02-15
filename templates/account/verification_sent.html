@@ -1,0 +1,13 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Confirmar dirección de correo electrónico" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{% trans "Confirmar dirección de correo electrónico" %}</h1>
+
+    <p>{% blocktrans %}Le hemos enviado un correo electrónico para su verificación. Siga el enlace proporcionado para finalizar el proceso de inscripción. Póngase en contacto con nosotros si no lo recibe en unos minutos.{% endblocktrans %}</p>
+</div>
+{% endblock %}

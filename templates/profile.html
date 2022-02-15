@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="site-sectino">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-m-12">
+                <h2 class="text-black">Tu perfil</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ request.user.email }}</h5>
+                        <a href="{% url 'account_logout' %}"><small class="float-right">Cerrar Sesión</small></a>
+                    </div>
+                    <hr />
+                    <h5 class="card-title">Tus ordenes</h5>
+                    <div class="site-blocks-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Referencia No.</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Estado de pago</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <a href="{% url 'cart:order-detail' order.pk %}"><td>{{ order.reference_number }}</td></a>
+                                    <td>{{ order.orden_fecha }}</td>
+                                    <td>{{ order.get_total }}</td>
+                                    <td>{% if order.ordenn %}Pagado{% else %}No pagado{% endif %}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="4"> No has realizado ninguna compra </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
