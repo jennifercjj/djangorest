@@ -20,14 +20,14 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST= 'smtp.gmail.com'
-EMAIL_PORT= 587
-EMAIL_HOST_USER = 'alfredoji300@gmail.com'
-EMAIL_HOST_PASSWORD = 'vhrosfovsbtllurp'
-EMAIL_USE_TLS = True
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST= 'smtp.gmail.com'
+#EMAIL_PORT= 587
+#EMAIL_HOST_USER = 'alfredoji300@gmail.com'
+#EMAIL_HOST_PASSWORD = 'vhrosfovsbtllurp'
+#EMAIL_USE_TLS = True
 
 # Application definition
 INSTALLED_APPS = [
@@ -97,11 +97,11 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=django,public'
         },
-        'NAME': 'restaurante',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+            'NAME': 'restaurante',
+            'USER': 'admin1',
+            'PASSWORD': 'Jenniferjaramillo123',
+            'HOST': 'bdresraurante.postgres.database.azure.com',
+            'PORT': '5432',
 
     },
 }
@@ -187,11 +187,12 @@ if DEBUG is False:
     ####
     DATABASES = {
         'default':{
+            
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'restaurante',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost',
+            'USER': 'admin1',
+            'PASSWORD': 'Jenniferjaramillo123',
+            'HOST': 'bdresraurante.postgres.database.azure.com',
             'PORT': '5432',
         }
 
