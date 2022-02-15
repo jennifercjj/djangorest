@@ -18,7 +18,10 @@ DEBUG = env('DEBUG')
 
 #
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*',
+'https://restaurantesaborysazon.azurewebsites.net',
+
+]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -164,6 +167,7 @@ STATICFILES_DIRS =[os.path.join(BASE_DIR,"static")]
 STATIC_ROOT = os.path.join(BASE_DIR,"static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 
 if DEBUG is False:
     SESSION_COOKIE_SECURE = True
